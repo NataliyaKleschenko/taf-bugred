@@ -60,7 +60,7 @@ public class UsersPageLoginForm extends BasePage {
 
     public boolean isUserFound() {
         String textFromUserNameLocator = getTextFromUserNameLocator();
-        return textFromUserNameLocator.equals("bob");
+        return textFromUserNameLocator.equals("jenkins");
     }
 
     public boolean isUserNotFound() {
