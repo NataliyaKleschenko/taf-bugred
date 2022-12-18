@@ -25,3 +25,8 @@ dependencies {
 test {
     useTestNG()
 }
+task testWeb(type: Test) {
+    useTestNG() {
+        suites "src/test/resources/testng.xml"
+    }
+}

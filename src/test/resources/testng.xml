@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/src/taf-bugred/src/test/java/by/itacademy/nataliya/ui">
+        <classes>
+            <class name="by.itacademy.nataliya.ui.UsersPageLoginFormTest">
+                <methods>
+                    <include name="testGetTextFromHeaderLoginForm"/>
+                    <include name="testGetTextFromEnterButtonLoginForm"/>
+                    <include name="testGetTextFromEmailLoginForm"/>
+                    <include name="testGetTextFromPasswordLoginForm"/>
+                    <include name="testGetTextFromLoginButtonLoginForm"/>
+                    <include name="testEnterWithInvalidData"/>
+                    <include name="testEnterWithValidData"/>
+                </methods>
+            </class>
+            <class name="by.itacademy.nataliya.ui.UsersPageRegistrationFormTest">
+                <methods>
+                    <include name="testGetTextFromRegistrationFieldRegisterForm"/>
+                    <include name="testGetTextFromNameFieldRegisterForm"/>
+                    <include name="testGetTextFromEmailFieldRegisterForm"/>
+                    <include name="testGetTextFromPasswordFieldRegisterForm"/>
+                    <include name="testGetTextFromRegistrationButtonRegisterForm"/>
+                    <include name="testRegisterWithInvalidData"/>
+                    <include name="testRegisterWithEmptyField"/>
+                    <include name="testEnterWithValidData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
