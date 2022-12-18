@@ -1,5 +1,7 @@
 package by.itacademy.nataliya.ui.steps;
 
+import by.itacademy.nataliya.ui.domain.User;
+import by.itacademy.nataliya.ui.pages.BasePage;
 import by.itacademy.nataliya.ui.pages.UsersPageLoginForm;
 import by.itacademy.nataliya.ui.pages.UsersPageRegistrationForm;
 
@@ -15,6 +17,13 @@ public class Steps {
         usersPageRegistration.typeInputName(name);
         usersPageRegistration.typeInputEmail(email);
         usersPageRegistration.typeInputPassword(password);
+        usersPageRegistration.clickOnLoginButton();
+    }
+    public void loginWithRegistrationEmpty(User user) {
+        UsersPageRegistrationForm usersPageRegistration = new UsersPageRegistrationForm();
+        usersPageRegistration.typeInputName(user.getName());
+        usersPageRegistration.typeInputEmail(user.getEmail());
+        usersPageRegistration.typeInputPassword(user.getPassword());
         usersPageRegistration.clickOnLoginButton();
     }
 }

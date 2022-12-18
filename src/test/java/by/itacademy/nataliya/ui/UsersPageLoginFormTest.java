@@ -7,30 +7,35 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class UsersPageLoginFormTest extends BaseTest {
-    UsersPageLoginForm page = new UsersPageLoginForm();
+    UsersPageLoginForm page;
 
     @Test(priority = 0)
     public void testGetTextFromHeaderLoginForm() {
+        page = new UsersPageLoginForm();
         Assert.assertEquals(page.getTextFromHeaderLoginForm(), UsersPageLoginForm.HEADER_LOGIN_FORM);
     }
 
     @Test(priority = 1)
     public void testGetTextFromEnterButtonLoginForm() {
+        page = new UsersPageLoginForm();
         Assert.assertEquals(page.getTextFromEnterButtonLoginForm(), UsersPageLoginForm.ENTER_LOGIN_FORM);
     }
 
     @Test(priority = 2)
     public void testGetTextFromEmailLoginForm() {
+        page = new UsersPageLoginForm();
         Assert.assertEquals(page.getTextFromEmailLoginForm(), UsersPageLoginForm.EMAIL_LOGIN_FORM);
     }
 
     @Test(priority = 3)
     public void testGetTextFromPasswordLoginForm() {
+        page = new UsersPageLoginForm();
         Assert.assertEquals(page.getTextFromPasswordLoginForm(), UsersPageLoginForm.PASSWORD_LOGIN_FORM);
     }
 
     @Test(priority = 4)
     public void testGetTextFromLoginButtonLoginForm() {
+        page = new UsersPageLoginForm();
         Assert.assertEquals(page.getTextFromLoginButtonLoginForm(), UsersPageLoginForm.LOGIN_BUTTON_LOGIN_FORM);
     }
 
@@ -48,6 +53,7 @@ public class UsersPageLoginFormTest extends BaseTest {
 
     @Test(dataProvider = "testLoginWithInvalidData", priority = 5)
     public void testEnterWithInvalidData(String email, String password) {
+        page = new UsersPageLoginForm();
         Steps steps = new Steps();
         steps.loginWithAuthorization(email, password);
         Assert.assertTrue(page.isUserNotFound());
@@ -62,6 +68,7 @@ public class UsersPageLoginFormTest extends BaseTest {
 
     @Test(dataProvider = "testLoginWithValidData", priority = 6)
     public void testEnterWithValidData(String email, String password) {
+        page = new UsersPageLoginForm();
         Steps steps = new Steps();
         steps.loginWithAuthorization(email, password);
         Assert.assertTrue(page.isUserFound());
