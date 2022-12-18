@@ -10,8 +10,8 @@ public class APITest {
     @Test
     public void testCreateNewUser() {
         String endPoint = "http://users.bugred.ru/tasks/rest/doregister";
-        String name = "robert1";
-        String email = "robert1@gmail.com";
+        String name = "robert2";
+        String email = "robert2@gmail.com";
         String password = "123";
         String requestBody = String.format("{\"name\":\"%s\",\"email\":\"%s\",\"password\":\"%s\"}", name, email, password);
         Response response = given()
@@ -23,8 +23,8 @@ public class APITest {
                 .then()
                 .extract().response();
         Assert.assertEquals(200, response.statusCode());
-        Assert.assertEquals(response.jsonPath().getString("name"), "robert1"); // изменить на актуальное
-        Assert.assertEquals(response.jsonPath().getString("email"), "robert1@gmail.com"); // изменить на актуальное
+        Assert.assertEquals(response.jsonPath().getString("name"), "robert2"); // изменить на актуальное
+        Assert.assertEquals(response.jsonPath().getString("email"), "robert2@gmail.com"); // изменить на актуальное
     }
 
     @Test
@@ -49,7 +49,7 @@ public class APITest {
     @Test
     public void testReadUser() {
         String endPoint = "http://users.bugred.ru/tasks/rest/getuser";
-        String email = "robert1@gmail.com";
+        String email = "robert2@gmail.com";
         String requestBody = String.format("{\"email\":\"%s\"}", email);
         given()
                 .header("Content-type", "application/json")
@@ -81,7 +81,7 @@ public class APITest {
     @Test
     void testUpdateUser() {
         String endPoint = "http://users.bugred.ru/tasks/rest/fullupdateuser";
-        String email = "robert1@gmail.com";
+        String email = "robert2@gmail.com";
         String hobby = "learning";
         String inn = "012345678901";
         String birthday = "01.05.2000";
@@ -102,7 +102,7 @@ public class APITest {
     @Test
     void testDeleteUsers() {
         String endPoint = "http://users.bugred.ru/tasks/rest/deleteuser";
-        String email = "robert1@gmail.com";
+        String email = "robert2@gmail.com";
         String requestBody = String.format("{\"email\":\"%s\"}", email);
         given()
                 .header("Content-type", "application/json")
