@@ -62,7 +62,7 @@ public class UsersPageLoginFormTest extends BaseTest {
     @DataProvider(name = "testLoginWithValidData")
     public Object[][] dataProv() {
         return new Object[][]{
-                {"bob@gmail.com", "123"},
+                {"jenkins@gmail.com", "123"},
         };
     }
 
