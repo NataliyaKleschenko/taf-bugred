@@ -2,11 +2,16 @@ plugins {
     id 'java'
 }
 
-group 'by.itacademy'
+group 'by.itacademy.nataliya'
 version '1.0.0'
 
 repositories {
     mavenCentral()
+}
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 dependencies {
