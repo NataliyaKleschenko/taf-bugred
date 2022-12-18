@@ -1,6 +1,5 @@
 package by.itacademy.nataliya.ui;
 
-import by.itacademy.nataliya.ui.domain.User;
 import by.itacademy.nataliya.ui.pages.UsersPageRegistrationForm;
 import by.itacademy.nataliya.ui.steps.Steps;
 import by.itacademy.nataliya.ui.util.RandomString;
@@ -48,7 +47,7 @@ public class UsersPageRegistrationFormTest extends BaseTest {
                 {"dog", " bob.gmail.com", " 123"},
                 {"dog", "     ", " 123"},
                 {"dog", "собака@gmail.com", "123"},
-                {"dog", "dogHunter@gmail/com", " 123"},
+                {"dog", "dogHunter*gmail/com", " 123"},
                 {"dog", "dogHunter$gmail.com", " 123"},
                 {"dog", "dogHanter@gmailcom", " 123"},
         };
@@ -81,14 +80,6 @@ public class UsersPageRegistrationFormTest extends BaseTest {
         Steps steps = new Steps();
         steps.loginWithRegistration(name, email, password);
         Assert.assertTrue(page.isNotRegisteredWithEmptyField());
-    }
-    @Test
-    public void testRegisterField() {
-        page = new UsersPageRegistrationForm();
-        User user = new User(RandomString.generateRandomString(), RandomString.generateRandomString() + "@gmail.ru",RandomString.generateRandomString());
-        Steps steps = new Steps();
-        steps.loginWithRegistrationEmpty(user);
-        Assert.assertTrue(page.isRegisterUser());
     }
 
     @DataProvider(name = "testRegisterWithValidData")
